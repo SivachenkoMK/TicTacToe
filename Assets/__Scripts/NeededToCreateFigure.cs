@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NeededToCreateFigure : MonoBehaviour
+public static class NeededToCreateFigure
 {
-    public string NeedForCreation = "Cross";
+    public static string NeedForCreation = "Cross";
 
-    public void ChangeForOther()
+    public static void ChangeForOther()
     {
         if (NeedForCreation == "Cross")
             NeedForCreation = "Zero";
         else if (NeedForCreation == "Zero")
             NeedForCreation = "Cross";
+    }
+
+    public static void SetNeededForCross()
+    {
+        NeedForCreation = "Cross";
     }
 }

@@ -8,23 +8,18 @@ public class FigureCreator : MonoBehaviour
 
     public GameObject Zero;
 
-    public void PutFigureToField()
-    {
-
-    }
-
-    public GameObject CreateFigure(GameObject other, string NeededToCreate)
+    public GameObject ImagineFigure(GameObject other, string NeededToCreate)
     {
         if (NeededToCreate == "Cross")
-            return Instantiate(Cross, other.transform.position, Quaternion.identity);
+        {
+            Cross.transform.position = other.transform.position;
+            return Cross;
+        }
         else if (NeededToCreate == "Zero")
-            return Instantiate(Zero, other.transform.position, Quaternion.identity);
+        {
+            Zero.transform.position = other.transform.position;
+            return Zero;
+        }
         return null;
-    }
-
-    public void DoAllForCreation(GameObject other, string NeededToCreate)
-    {
-        CreateFigure(other, NeededToCreate);
-        PutFigureToField();
     }
 }

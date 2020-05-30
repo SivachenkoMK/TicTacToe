@@ -8,40 +8,53 @@ public class PlateScript : MonoBehaviour
 
     public int Length;
 
-    private GameObject Field;
-
-    private GameObject CreatorObject;
-
     private FigureCreator Creator;
+
+    private GameController _GameController;
 
     private void Awake()
     {
         Creator = GameObject.Find("FiguresManager").GetComponent<FigureCreator>();
-        Field = GameObject.Find("PhysicalField");
     }
 
     private void OnMouseDown()
     {
-        CreateFigure();
-        SetField();
-        GameObject.Find("FiguresManager").GetComponent<NeededToCreateFigure>().ChangeForOther();
+        _GameController = GameObject.Find("GameController").GetComponent<GameController>();
+        Move();
         Destroy(this.gameObject);
+    }
+
+    private void Move()
+    {
+        CreateFigure();
+        SetCorrectCellInField();
+        Field.FilledCells++;
+        NeededToCreateFigure.ChangeForOther();
+        WinGame();
+        Field.Draw();
+    }
+
+    private void WinGame()
+    {
+        if (Field.CheckForVictory() != null)
+        {
+            _GameController = GameObject.Find("GameController").GetComponent<GameController>();
+            _GameController.EndGame(Field.CheckForVictory());
+        }
+    }
+
+    private void SetCorrectCellInField()
+    {
+        if (NeededToCreateFigure.NeedForCreation == "Cross")
+            Field.field[High, Length] = 1;
+        else if (NeededToCreateFigure.NeedForCreation == "Zero")
+            Field.field[High, Length] = 2;
+        else
+            Field.field[High, Length] = 0;
     }
 
     private void CreateFigure()
     {
-        Creator.DoAllForCreation(this.gameObject, GameObject.Find("FiguresManager").GetComponent<NeededToCreateFigure>().NeedForCreation);
-    }
-
-    private void SetField()
-    {
-        if (GameObject.Find("FiguresManager").GetComponent<NeededToCreateFigure>().NeedForCreation == "Cross")
-        {
-            Field.GetComponent<FiguresOnField>().Field[High, Length] = 1;
-        }
-        else if (GameObject.Find("FiguresManager").GetComponent<NeededToCreateFigure>().NeedForCreation == "Zero")
-        {
-            Field.GetComponent<FiguresOnField>().Field[High, Length] = 2;
-        }
+        Instantiate(Creator.ImagineFigure(this.gameObject, NeededToCreateFigure.NeedForCreation));
     }
 }

@@ -162,9 +162,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Zero won the game.
-
-    Congratulations!'
+  m_Text: "Draw! \nNo one won this game."
 --- !u!1 &2830047539550518729
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +251,7 @@ GameObject:
   - component: {fileID: 4333172363908455893}
   - component: {fileID: 2961347676930733820}
   m_Layer: 5
-  m_Name: ZeroVictoryTable
+  m_Name: DrawTable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -4,45 +4,81 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    private GameObject PhysicalField;
+    public GameObject CrossTable;
+    public GameObject ZeroTable;
+    public GameObject DrawTable;
 
-    private GameObject _Canvas;
-
-    public GameObject CrossVictoryTablePrefab;
-    public GameObject ZeroVictoryTablePrefab;
-
-    private GameObject CrossVictoryTable;
-    private GameObject ZeroVictoryTable;
-
-    private void Awake()
-    {
-        PhysicalField = GameObject.Find("PhysicalField");
-        _Canvas = GameObject.Find("Canvas");
-    }
+    private GameObject thisField;
 
     private void Start()
     {
-        PhysicalField.GetComponent<FiguresOnField>().SetAllOnFieldZero();
+        thisField = Instantiate(GameObject.Find("FieldsPrefabs").GetComponent<AllFieldsPrefabs>().ThreeToThree, Vector3.zero, Quaternion.identity);
     }
-
+    
     public void Restart()
     {
-        PhysicalField.GetComponent<FiguresOnField>().SetEverythingDefault();
-        Destroy(CrossVictoryTable);
-        Destroy(ZeroVictoryTable);
+        GoDefault();
+        Start();
     }
 
-    void Update()
+    public void GoDefault()
     {
-        if (PhysicalField.GetComponent<FiguresOnField>().Victory == 1)
+        DestroyCrosses();
+        DestroyZeros();
+        Destroy(thisField);
+        SetAllTablesFalse();
+        Field.SetFieldZero();
+        NeededToCreateFigure.SetNeededForCross();
+        Field.FilledCells = 0;
+    }
+
+    private void DestroyCrosses()
+    {
+        GameObject[] Crosses = GameObject.FindGameObjectsWithTag("Cross");
+        foreach (GameObject cross in Crosses)
         {
-            CrossVictoryTable = Instantiate(CrossVictoryTablePrefab, _Canvas.transform);
-            PhysicalField.GetComponent<FiguresOnField>().Victory = -1;
+            Destroy(cross);
         }
-        else if (PhysicalField.GetComponent<FiguresOnField>().Victory == 2)
+    }
+
+    private void DestroyZeros()
+    {
+        GameObject[] Zeros = GameObject.FindGameObjectsWithTag("Zero");
+        foreach (GameObject zero in Zeros)
         {
-            ZeroVictoryTable = Instantiate(ZeroVictoryTablePrefab, _Canvas.transform);
-            PhysicalField.GetComponent<FiguresOnField>().Victory = -1;
+            Destroy(zero);
         }
+    }
+
+    private void SetAllTablesFalse()
+    {
+        CrossTable.SetActive(false);
+        ZeroTable.SetActive(false);
+        DrawTable.SetActive(false);
+    }
+
+    public void EndGame(string Result)
+    {
+        if (Result == "Cross")
+            CrossWin();
+        else if (Result == "Zero")
+            ZeroWin();
+        else if (Result == "Draw")
+            Draw();
+    }
+
+    private void CrossWin()
+    {
+        CrossTable.SetActive(true);
+    }
+
+    private void ZeroWin()
+    {
+        ZeroTable.SetActive(true);
+    }
+
+    private void Draw()
+    {
+        DrawTable.SetActive(true);
     }
 }
