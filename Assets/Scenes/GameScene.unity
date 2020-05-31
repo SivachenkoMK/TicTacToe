@@ -1185,6 +1185,8 @@ MonoBehaviour:
   CrossTable: {fileID: 689037226}
   ZeroTable: {fileID: 827977866}
   DrawTable: {fileID: 1038218784}
+  CrossMovesFirst: {fileID: 5691919050868630374, guid: 85ec3a3096c96bc41a69efc6efa7b372,
+    type: 3}
 --- !u!4 &1299909219
 Transform:
   m_ObjectHideFlags: 0

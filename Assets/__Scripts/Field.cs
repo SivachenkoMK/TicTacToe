@@ -21,7 +21,7 @@ public static class Field
 
     public static void Draw()
     {
-        if (FilledCells == GameSetup.Height * GameSetup.Length/* && CheckForVictory() == null*/)
+        if (FilledCells == GameSetup.Height * GameSetup.Length && CheckForVictory() == null)
         {
              GameController _GameController = GameObject.Find("GameController").GetComponent<GameController>();
             _GameController.EndGame("Draw");

@@ -8,10 +8,13 @@ public class GameController : MonoBehaviour
     public GameObject ZeroTable;
     public GameObject DrawTable;
 
+    public GameObject CrossMovesFirst;
+
     private GameObject thisField;
 
     private void Start()
     {
+        CrossMovesFirst.SetActive(true);
         thisField = Instantiate(GameObject.Find("FieldsPrefabs").GetComponent<AllFieldsPrefabs>().ThreeToThree, Vector3.zero, Quaternion.identity);
     }
     

@@ -29,6 +29,8 @@ public class PlateScript : MonoBehaviour
         CreateFigure();
         SetCorrectCellInField();
         Field.FilledCells++;
+        if (Field.FilledCells == 1)
+            _GameController.CrossMovesFirst.SetActive(false); 
         NeededToCreateFigure.ChangeForOther();
         WinGame();
         Field.Draw();
