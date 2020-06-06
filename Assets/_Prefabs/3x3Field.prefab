@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6487401894970902723}
   m_Layer: 0
   m_Name: Plate
-  m_TagString: Untagged
+  m_TagString: Plate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,6 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   High: 0
   Length: 0
+  number: 6
 --- !u!1 &875099373161026532
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +73,7 @@ GameObject:
   - component: {fileID: 7500270597107624631}
   m_Layer: 0
   m_Name: Plate
-  m_TagString: Untagged
+  m_TagString: Plate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   High: 2
   Length: 1
+  number: 1
 --- !u!1 &3086730849674433623
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +133,7 @@ GameObject:
   - component: {fileID: 6520101081180877053}
   m_Layer: 0
   m_Name: Plate
-  m_TagString: Untagged
+  m_TagString: Plate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,6 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   High: 2
   Length: 0
+  number: 0
 --- !u!1 &3827195803907125055
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +228,7 @@ GameObject:
   - component: {fileID: 7225699472906534487}
   m_Layer: 0
   m_Name: Plate
-  m_TagString: Untagged
+  m_TagString: Plate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -271,6 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   High: 1
   Length: 1
+  number: 4
 --- !u!1 &4904730350133709910
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +327,7 @@ GameObject:
   - component: {fileID: 8798923865357237957}
   m_Layer: 0
   m_Name: Plate
-  m_TagString: Untagged
+  m_TagString: Plate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -369,6 +373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   High: 0
   Length: 1
+  number: 7
 --- !u!1 &7023897676861265982
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +387,7 @@ GameObject:
   - component: {fileID: 8873807502101224121}
   m_Layer: 0
   m_Name: Plate
-  m_TagString: Untagged
+  m_TagString: Plate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -428,6 +433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   High: 1
   Length: 2
+  number: 5
 --- !u!1 &7408012796323564411
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +447,7 @@ GameObject:
   - component: {fileID: 1747046554618528564}
   m_Layer: 0
   m_Name: Plate
-  m_TagString: Untagged
+  m_TagString: Plate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -487,6 +493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   High: 2
   Length: 2
+  number: 2
 --- !u!1 &7913142600943931024
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,7 +507,7 @@ GameObject:
   - component: {fileID: 8151025106029314005}
   m_Layer: 0
   m_Name: Plate
-  m_TagString: Untagged
+  m_TagString: Plate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -546,6 +553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   High: 1
   Length: 0
+  number: 3
 --- !u!1 &8166591616568600237
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,7 +567,7 @@ GameObject:
   - component: {fileID: 3579458708959980953}
   m_Layer: 0
   m_Name: Plate
-  m_TagString: Untagged
+  m_TagString: Plate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -605,6 +613,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   High: 0
   Length: 2
+  number: 8
 --- !u!1 &8418773093755991656
 GameObject:
   m_ObjectHideFlags: 0

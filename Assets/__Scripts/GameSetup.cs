@@ -4,7 +4,9 @@ using UnityEngine;
 
 public static class GameSetup
 {
-    public static int Length = 3;
-    
-    public static int Height = 3;
+    public static string Move;
+
+    public static string FirstPlayer;
+
+    public static string SecondPlayer;    
 }

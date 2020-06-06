@@ -4,114 +4,56 @@ using UnityEngine;
 
 public static class Field
 {
-    public static int[,] field = new int[GameSetup.Height, GameSetup.Length];
+    public static char[] field = { '0', '1', '2', '3', '4', '5', '6', '7', '8' };
 
     public static int FilledCells = 0;
 
     public static void SetFieldZero()
     {
-        for (int i = 0; i < GameSetup.Length; i++)
+        for (int i = 0; i < field.Length; i++)
         {
-            for (int j = 0; j < GameSetup.Height; j++)
-            {
-                field[i, j] = 0;
-            }
+            field[i] = char.Parse(i.ToString());
         }
     }
 
     public static void Draw()
     {
-        if (FilledCells == GameSetup.Height * GameSetup.Length && CheckForVictory() == null)
+        if (FilledCells == field.Length && !CheckForVictory(field, 'X') && !CheckForVictory(field, 'O'))
         {
              GameController _GameController = GameObject.Find("GameController").GetComponent<GameController>();
             _GameController.EndGame("Draw");
         }
     }
 
-    public static string CheckForVictory()
+    public static void CrossWins()
     {
-        if (CheckForHorizontals() != null)
-            return CheckForHorizontals();
-        if (CheckForVerticals() != null)
-            return CheckForVerticals();
-        if (CheckForDiagonals() != null)
-            return CheckForDiagonals();
-        return null;
+        if (CheckForVictory(field, 'X'))
+        {
+            GameController _GameController = GameObject.Find("GameController").GetComponent<GameController>();
+            _GameController.EndGame("Cross");
+        }
     }
 
-    private static string CheckForHorizontals()
+    public static void ZeroWins()
     {
-        for (int i = 0; i < 3; i++)
+        if (CheckForVictory(field, 'O'))
         {
-            if (field[i, 0] == field[i, 1] && field[i, 1] == field[i, 2])
-            {
-                switch (field[i, 0])
-                {
-                    case (1):
-                        {
-                            return "Cross";
-                        }
-                    case (2):
-                        {
-                            return "Zero";
-                        }
-                    default:
-                        {
-                            continue;
-                        }
-                }
-            }
+            GameController _GameController = GameObject.Find("GameController").GetComponent<GameController>();
+            _GameController.EndGame("Zero");
         }
-        return null; 
     }
 
-    private static string CheckForVerticals()
+    private static bool CheckForVictory(char[] Board, char Player)
     {
-
-        for (int j = 0; j < 3; j++)
-        {
-            if (field[0, j] == field[1, j] && field[1, j] == field[2, j])
-            {
-                switch (field[0, j])
-                {
-                    case (1):
-                        {
-                            return "Cross";
-                        }
-                    case (2):
-                        {
-                            return "Zero";
-                        }
-                    default:
-                        {
-                            continue;
-                        }
-                }
-            }
-        }
-        return null;
-    }
-
-    private static string CheckForDiagonals()
-    {
-        if ((field[0, 0] == field[1, 1] && field[1, 1] == field[2, 2]) || (field[2, 0] == field[1, 1] && field[1, 1] == field[0, 2]))
-        {
-            switch (field[1, 1])
-            {
-                case (1):
-                    {
-                        return "Cross";
-                    }
-                case (2):
-                    {
-                        return "Zero";
-                    }
-                default:
-                    {
-                        break;
-                    }
-            }
-        }
-        return null;
+        if ((Board[0] == Player && Board[1] == Player && Board[2] == Player) ||
+            (Board[3] == Player && Board[4] == Player && Board[5] == Player) ||
+            (Board[6] == Player && Board[7] == Player && Board[8] == Player) ||
+            (Board[0] == Player && Board[3] == Player && Board[6] == Player) ||
+            (Board[1] == Player && Board[4] == Player && Board[7] == Player) ||
+            (Board[2] == Player && Board[5] == Player && Board[8] == Player) ||
+            (Board[0] == Player && Board[4] == Player && Board[8] == Player) ||
+            (Board[2] == Player && Board[4] == Player && Board[6] == Player))
+            return true;
+        return false;
     }
 }

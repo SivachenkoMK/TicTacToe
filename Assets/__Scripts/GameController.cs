@@ -16,8 +16,9 @@ public class GameController : MonoBehaviour
     {
         CrossMovesFirst.SetActive(true);
         thisField = Instantiate(GameObject.Find("FieldsPrefabs").GetComponent<AllFieldsPrefabs>().ThreeToThree, Vector3.zero, Quaternion.identity);
+        GameObject.Find("PlayerSystem").GetComponent<PlayerSystem>().Turn = 1;
     }
-    
+
     public void Restart()
     {
         GoDefault();
@@ -31,7 +32,6 @@ public class GameController : MonoBehaviour
         Destroy(thisField);
         SetAllTablesFalse();
         Field.SetFieldZero();
-        NeededToCreateFigure.SetNeededForCross();
         Field.FilledCells = 0;
     }
 
@@ -61,6 +61,12 @@ public class GameController : MonoBehaviour
     }
 
     public void EndGame(string Result)
+    {
+        GameObject.Find("PlayerSystem").GetComponent<PlayerSystem>().Turn = 0;
+        CreateEndTable(Result);
+    }
+
+    private void CreateEndTable(string Result)
     {
         if (Result == "Cross")
             CrossWin();

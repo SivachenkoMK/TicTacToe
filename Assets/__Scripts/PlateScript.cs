@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class PlateScript : MonoBehaviour
 {
-    public int High;
-
-    public int Length;
+    public int number;
 
     private FigureCreator Creator;
 
@@ -17,46 +15,42 @@ public class PlateScript : MonoBehaviour
         Creator = GameObject.Find("FiguresManager").GetComponent<FigureCreator>();
     }
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         _GameController = GameObject.Find("GameController").GetComponent<GameController>();
         Move();
         Destroy(this.gameObject);
     }
 
-    private void Move()
+    public void Move()
     {
         CreateFigure();
         SetCorrectCellInField();
         Field.FilledCells++;
         if (Field.FilledCells == 1)
-            _GameController.CrossMovesFirst.SetActive(false); 
-        NeededToCreateFigure.ChangeForOther();
-        WinGame();
+            _GameController.CrossMovesFirst.SetActive(false);
+        GameObject.Find("PlayerSystem").GetComponent<PlayerSystem>().NextTurn();
+        Field.CrossWins();
+        Field.ZeroWins();
         Field.Draw();
-    }
-
-    private void WinGame()
-    {
-        if (Field.CheckForVictory() != null)
-        {
-            _GameController = GameObject.Find("GameController").GetComponent<GameController>();
-            _GameController.EndGame(Field.CheckForVictory());
-        }
     }
 
     private void SetCorrectCellInField()
     {
-        if (NeededToCreateFigure.NeedForCreation == "Cross")
-            Field.field[High, Length] = 1;
-        else if (NeededToCreateFigure.NeedForCreation == "Zero")
-            Field.field[High, Length] = 2;
-        else
-            Field.field[High, Length] = 0;
+        Field.field[number] = GetCurrentFigure();
     }
 
     private void CreateFigure()
     {
-        Instantiate(Creator.ImagineFigure(this.gameObject, NeededToCreateFigure.NeedForCreation));
+        Instantiate(Creator.ImagineFigure(this.gameObject, GetCurrentFigure()));
+    }
+
+    private char GetCurrentFigure()
+    {
+        if (GameObject.Find("PlayerSystem").GetComponent<PlayerSystem>().Turn == 1)
+            return GameObject.Find("PlayerSystem").GetComponent<PlayerSystem>().Player1.Figure;
+        else if (GameObject.Find("PlayerSystem").GetComponent<PlayerSystem>().Turn == 2)
+            return GameObject.Find("PlayerSystem").GetComponent<PlayerSystem>().Player2.Figure;
+        return ' ';
     }
 }

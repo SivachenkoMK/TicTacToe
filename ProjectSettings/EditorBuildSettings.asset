@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: 97740ed7a97fbe0489a2d1efc887eed1
+  - enabled: 1
+    path: Assets/Scenes/DecideWhatIsYourFigureAgainstBot.unity
+    guid: 0c8fa7101628d2f4e99603a12264d04f
   m_configObjects: {}

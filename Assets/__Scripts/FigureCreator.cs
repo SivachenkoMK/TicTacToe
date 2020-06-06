@@ -8,14 +8,14 @@ public class FigureCreator : MonoBehaviour
 
     public GameObject Zero;
 
-    public GameObject ImagineFigure(GameObject other, string NeededToCreate)
+    public GameObject ImagineFigure(GameObject other, char NeededToCreate)
     {
-        if (NeededToCreate == "Cross")
+        if (NeededToCreate == 'X')
         {
             Cross.transform.position = other.transform.position;
             return Cross;
         }
-        else if (NeededToCreate == "Zero")
+        else if (NeededToCreate == 'O')
         {
             Zero.transform.position = other.transform.position;
             return Zero;
