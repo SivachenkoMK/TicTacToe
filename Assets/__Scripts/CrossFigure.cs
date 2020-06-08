@@ -2,15 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Figure : MonoBehaviour
+public class CrossFigure : Figure
 {
-    protected Animation animation;  
-    public void DestroyFigure()
-    {
-        Destroy(this);
-    }
-
-    public virtual void AnimateFigureOnVictory()
+    public override void AnimateFigureOnVictory()
     {
         animation = this.gameObject.GetComponent<Animation>();
         animation.Play("CrossRotation");

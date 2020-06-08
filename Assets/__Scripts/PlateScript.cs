@@ -42,7 +42,9 @@ public class PlateScript : MonoBehaviour
 
     private void CreateFigure()
     {
-        Instantiate(Creator.ImagineFigure(this.gameObject, GetCurrentFigure()));
+        GameObject Figure;
+        Figure = Instantiate(Creator.ImagineFigure(this.gameObject, GetCurrentFigure()));
+        FieldOfGameObjects.Figures[number] = Figure;
     }
 
     private char GetCurrentFigure()

@@ -57,8 +57,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1e03dd711ee984990b66e82a305799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  High: 0
-  Length: 0
   number: 6
 --- !u!1 &875099373161026532
 GameObject:
@@ -117,8 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1e03dd711ee984990b66e82a305799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  High: 2
-  Length: 1
   number: 1
 --- !u!1 &3086730849674433623
 GameObject:
@@ -177,8 +173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1e03dd711ee984990b66e82a305799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  High: 2
-  Length: 0
   number: 0
 --- !u!1 &3827195803907125055
 GameObject:
@@ -272,8 +266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1e03dd711ee984990b66e82a305799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  High: 1
-  Length: 1
   number: 4
 --- !u!1 &4904730350133709910
 GameObject:
@@ -371,8 +363,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1e03dd711ee984990b66e82a305799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  High: 0
-  Length: 1
   number: 7
 --- !u!1 &7023897676861265982
 GameObject:
@@ -431,8 +421,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1e03dd711ee984990b66e82a305799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  High: 1
-  Length: 2
   number: 5
 --- !u!1 &7408012796323564411
 GameObject:
@@ -491,8 +479,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1e03dd711ee984990b66e82a305799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  High: 2
-  Length: 2
   number: 2
 --- !u!1 &7913142600943931024
 GameObject:
@@ -551,8 +537,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1e03dd711ee984990b66e82a305799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  High: 1
-  Length: 0
   number: 3
 --- !u!1 &8166591616568600237
 GameObject:
@@ -611,8 +595,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1e03dd711ee984990b66e82a305799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  High: 0
-  Length: 2
   number: 8
 --- !u!1 &8418773093755991656
 GameObject:

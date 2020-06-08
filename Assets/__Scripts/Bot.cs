@@ -25,6 +25,7 @@ public class Bot : Player
 
     public override void Move()
     {
+        GameObject.Find("GameController").GetComponent<GameController>().BlockerOfField.SetActive(true);
         int Index = int.Parse(Minimax(aiPlayer, Field.field).index.ToString());
         GameObject[] Plates = GameObject.FindGameObjectsWithTag("Plate");
         foreach (GameObject Plate in Plates)
@@ -34,6 +35,7 @@ public class Bot : Player
                 Plate.GetComponent<PlateScript>().OnMouseDown();
             }
         }
+        GameObject.Find("GameController").GetComponent<GameController>().BlockerOfField.SetActive(false);
     }
     private bool Wins(char[] Board, char Player)
     {

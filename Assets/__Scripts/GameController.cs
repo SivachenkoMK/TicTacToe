@@ -12,8 +12,13 @@ public class GameController : MonoBehaviour
 
     private GameObject thisField;
 
+    public GameObject BlockerOfField;
+
+    public GameObject WinningTapToContinueTable;
+
     private void Start()
     {
+        BlockerOfField.SetActive(false);
         CrossMovesFirst.SetActive(true);
         thisField = Instantiate(GameObject.Find("FieldsPrefabs").GetComponent<AllFieldsPrefabs>().ThreeToThree, Vector3.zero, Quaternion.identity);
         GameObject.Find("PlayerSystem").GetComponent<PlayerSystem>().Turn = 1;
@@ -63,10 +68,12 @@ public class GameController : MonoBehaviour
     public void EndGame(string Result)
     {
         GameObject.Find("PlayerSystem").GetComponent<PlayerSystem>().Turn = 0;
-        CreateEndTable(Result);
+        WinningTapToContinueTable.SetActive(true);
+        WinningTapToContinueTable.GetComponent<WinningTapToContinueTableScript>().Winner = Result;
+        BlockerOfField.SetActive(true);
     }
 
-    private void CreateEndTable(string Result)
+    public void CreateEndTable(string Result)
     {
         if (Result == "Cross")
             CrossWin();
