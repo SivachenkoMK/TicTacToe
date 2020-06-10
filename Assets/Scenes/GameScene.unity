@@ -714,7 +714,7 @@ PrefabInstance:
     - target: {fileID: 3323293572502235922, guid: e643ee09251ac9948b43fa9db5ef42cf,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3323293572502235935, guid: e643ee09251ac9948b43fa9db5ef42cf,
         type: 3}
@@ -773,12 +773,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e643ee09251ac9948b43fa9db5ef42cf, type: 3}
---- !u!1 &186728930 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3323293572502235922, guid: e643ee09251ac9948b43fa9db5ef42cf,
-    type: 3}
-  m_PrefabInstance: {fileID: 186728929}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,6 +1639,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1299909219}
   - component: {fileID: 1299909218}
+  - component: {fileID: 1299909220}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1668,7 +1663,6 @@ MonoBehaviour:
   ZeroTable: {fileID: 827977866}
   DrawTable: {fileID: 1038218784}
   CrossMovesFirst: {fileID: 1769403089}
-  BlockerOfField: {fileID: 186728930}
   WinningTapToContinueTable: {fileID: 54389769}
 --- !u!4 &1299909219
 Transform:
@@ -1684,6 +1678,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1299909220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299909217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5033baf9e76ea4a8375e75c44daa82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1386207528
 GameObject:
   m_ObjectHideFlags: 0
