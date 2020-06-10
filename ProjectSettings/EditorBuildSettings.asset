@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ChoooseGameScene.unity
     guid: faf22ef00d7c6af41a9e8b23f3ee61f5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SetSizeOfField.unity
     guid: f8663083d45d42547a568297ae2ea8fa
   - enabled: 1
