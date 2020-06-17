@@ -68,4 +68,13 @@ public class PlayerSystem : MonoBehaviour
         else if (Turn == 2)
             Turn--;
     }
+
+    public char GetCurrentFigure()
+    {
+        if (Turn == 1)
+            return 'X';
+        else if (Turn == 2)
+            return 'O';
+        return 'E';
+    }
 }
